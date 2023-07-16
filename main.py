@@ -19,4 +19,7 @@ if __name__ == "__main__":
 
     if page == 'signup' or page == 'login':
         st.sidebar.button("Introduction", on_click=tools.change_page('dashboard'))
+        st.sidebar.markdown("Authentication")
+        st.sidebar.button("Login Form", on_click=tools.change_page('login'))
+        st.sidebar.button("Sign Up Form", on_click=tools.change_page('signup'))
     remove_footer.run()

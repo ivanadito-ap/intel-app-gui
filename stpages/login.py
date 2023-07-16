@@ -5,6 +5,7 @@ import time
 def run():
 	# Add the Login title
 	st.title("Login")
+	st.markdown("Login to access your personalized dashboard, where you'll discover a wealth of tools and resources designed to supercharge your financial decision-making.")
 
 	# Add the username and password input fields
 	username = st.text_input("Username")
@@ -22,7 +23,6 @@ def run():
 		elif accounts.get(username).get('password') != password:
 			st.error("Invalid username or password. Please try again.")
 		else:
-			st.success("Logged in successfully!")
 			tools.change_page('ai')()
 	# Add the login button
 	col1.button("Login", on_click=reg)
