@@ -18,5 +18,10 @@ def run():
 		elif not accept_terms:
 			st.warning("Please accept the terms and conditions.")
 		else:
-			# Perform signup logic here (e.g., create user account, store data, etc.)
-			st.success("Sign up successful!")
+			accounts = tools.Storage('accounts.json')
+			if accounts.get(username) == None:
+				st.success("Sign up successful!")
+				accounts.set(username, {"username":username, "birthday":str(birthday), "password":password})
+				tools.change_page('login')
+			else:
+				st.error("Username already exists. Please try again.")

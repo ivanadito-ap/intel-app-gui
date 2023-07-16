@@ -14,9 +14,11 @@ def run():
 	col2.button("Doesn't have an account?", on_click=tools.change_page('signup'))
 	# Add the login button
 	if col1.button("Login"):
+		accounts = tools.Storage('accounts.json')
 		# Check if the username and password are valid
-		if username == "myusername" and password == "mypassword":
-			st.success("Logged in successfully!")
-			# Redirect to the next page or perform other actions
-		else:
+		if accounts.get(username) == None:
 			st.error("Invalid username or password. Please try again.")
+		elif accounts.get(username).get('password') != password:
+			st.error("Invalid username or password. Please try again.")
+		else:
+			st.success("Logged in successfully!")

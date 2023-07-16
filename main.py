@@ -1,8 +1,7 @@
 import streamlit as st
-from stpages import dashboard, signup, login
+from stpages import dashboard, signup, login, ai
 import tools
 import remove_footer
-# accounts = tools.Storage('accounts')
 if __name__ == "__main__":
     # Initialization
     if 'page' not in st.session_state:
