@@ -1,7 +1,7 @@
 import streamlit as st
 
 from signup import signup_page
-from test import test
+from tests.test import test
 
 def welcome_page():
     st.title("Welcome Page")
