@@ -1,5 +1,5 @@
 import streamlit as st
-
+import remove_footer
 def signup_page():
     st.title("Sign-Up Page")
     st.write("Please fill out the form below to sign up.")
