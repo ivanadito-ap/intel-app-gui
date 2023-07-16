@@ -10,10 +10,13 @@ if __name__ == "__main__":
     page = st.session_state.page
     if page == 'dashboard':
         dashboard.run()
-    if page == 'signup':
+    elif page == 'signup':
         signup.run()
-    if page == 'login':
+    elif page == 'login':
         login.run()
+    elif page == 'login':
+        ai.run()
+
     if page == 'signup' or page == 'login':
         st.sidebar.button("Introduction", on_click=tools.change_page('dashboard'))
     remove_footer.run()
