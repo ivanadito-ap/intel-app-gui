@@ -14,7 +14,7 @@ if __name__ == "__main__":
         signup.run()
     elif page == 'login':
         login.run()
-    elif page == 'login':
+    elif page == 'ai':
         ai.run()
 
     if page == 'signup' or page == 'login':

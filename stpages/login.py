@@ -1,5 +1,6 @@
 import streamlit as st
 import tools
+import time
 
 def run():
 	# Add the Login title
@@ -12,8 +13,8 @@ def run():
 	col1, col2 = st.columns((6,2.5))
 
 	col2.button("Doesn't have an account?", on_click=tools.change_page('signup'))
-	# Add the login button
-	if col1.button("Login"):
+
+	def reg():
 		accounts = tools.Storage('accounts.json')
 		# Check if the username and password are valid
 		if accounts.get(username) == None:
@@ -22,3 +23,6 @@ def run():
 			st.error("Invalid username or password. Please try again.")
 		else:
 			st.success("Logged in successfully!")
+			tools.change_page('ai')()
+	# Add the login button
+	col1.button("Login", on_click=reg)
